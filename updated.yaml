@@ -7939,8 +7939,7 @@ constants:
     value: 13
   XP_ERROR_STORE_DISABLED:
     member-of: [ExperienceError]
-    tooltip: The key-value store is c
-urrently disabled on this region.
+    tooltip: The key-value store is currently disabled on this region.
     type: integer
     value: 12
   XP_ERROR_THROTTLED:
@@ -16558,8 +16557,7 @@ functions:
     func-id: 302
     return: void
     sleep: 0.0
-    tooltip: Suggests default amounts for the pay text input field price an
-d the
+    tooltip: Suggests default amounts for the pay text input field price and the
       four payment dialog quick_pay_buttons when an avatar pays this object.
     categories:
       - money
