@@ -1869,6 +1869,7 @@ modules:
     must-use: true
     variants:
       - comment: "Returns a random float number in the [0, 1) range (exclusive of 1)."
+        parameters: []
         return-type: number
       - comment: "Returns a random integer number in the [1, n] range. Input is truncated to integer."
         parameters:
@@ -2286,7 +2287,7 @@ modules:
     must-use: true
     typechecker: {builtin: true}
   - name: match
-    comment: Finds and returns matches for a pattern in the input string.
+    comment: Finds and returns matches for a pattern in the input string. Returns nil if no match is found.
     parameters:
     - name: s
       comment: Input string.
@@ -2298,7 +2299,7 @@ modules:
       comment: Starting index.
       type: number?
       default-value: 1
-    return-type: '...string'
+    return-type: '...string?'
     must-use: true
     typechecker: {builtin: true, magic: true}
   - name: pack
