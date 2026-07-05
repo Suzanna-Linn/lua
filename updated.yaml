@@ -7479,6 +7479,8 @@ constants:
       preferred axis toward its true velocity.
     type: integer
     value: 32
+    value-type: float
+    range: [0, 1]
   VEHICLE_ANGULAR_DEFLECTION_TIMESCALE:
     member-of: [VehicleFloatParam]
     tooltip: Vehicle float parameter specifying the exponential timescale for the
@@ -7486,6 +7488,7 @@ constants:
       of motion to match its true velocity.
     type: integer
     value: 33
+    value-type: float
   VEHICLE_ANGULAR_FRICTION_TIMESCALE:
     member-of: [VehicleVectorParam]
     tooltip: Vehicle vector parameter specifying the timescales (range [0.07,
@@ -7493,6 +7496,8 @@ constants:
       about the vehicle's preferred axes (at, left, up).
     type: integer
     value: 17
+    value-type: vector
+    range: ["<0.07,0.07,0.07>", "<inf,inf,inf>"]
   VEHICLE_ANGULAR_MOTOR_DECAY_TIMESCALE:
     member-of: [VehicleFloatParam]
     tooltip: Vehicle float parameter specifying the exponential timescale (in
@@ -7500,6 +7505,8 @@ constants:
       toward zero.
     type: integer
     value: 35
+    value-type: float
+    range: [0, 120]
   VEHICLE_ANGULAR_MOTOR_DIRECTION:
     member-of: [VehicleVectorParam]
     tooltip: Vehicle vector parameter specifying the direction and magnitude of the
@@ -7507,12 +7514,15 @@ constants:
       attempts to achieve.
     type: integer
     value: 19
+    value-type: vector
+    range: ["<0,0,0>", "<12.56637,12.56637,12.56637>"]
   VEHICLE_ANGULAR_MOTOR_TIMESCALE:
     member-of: [VehicleFloatParam]
     tooltip: Vehicle float parameter specifying the exponential timescale for the
       vehicle's angular motor to achieve full power and velocity.
     type: integer
     value: 34
+    value-type: float
   VEHICLE_BANKING_EFFICIENCY:
     member-of: [VehicleFloatParam]
     tooltip: Vehicle float parameter (range -1.0 to 1.0) controlling banking
@@ -7521,6 +7531,8 @@ constants:
       motors to bank. 0.0 means no banking.
     type: integer
     value: 38
+    value-type: float
+    range: [-1, 1]
   VEHICLE_BANKING_MIX:
     member-of: [VehicleFloatParam]
     tooltip: Vehicle float parameter (range 0.0 (static) to 1.0) (dynamic)
@@ -7528,6 +7540,8 @@ constants:
       and dynamic banking (additionally scales with linear speed).
     type: integer
     value: 39
+    value-type: float
+    range: [0, 1]
   VEHICLE_BANKING_TIMESCALE:
     member-of: [VehicleFloatParam]
     tooltip: Vehicle float parameter specifying the exponential timescale for the
@@ -7537,12 +7551,15 @@ constants:
       to do, and what the vehicle is actually doing.
     type: integer
     value: 40
+    value-type: float
   VEHICLE_BUOYANCY:
     member-of: [VehicleFloatParam]
     tooltip: Vehicle float parameter (range -1.0 to 1.0) defining buoyancy, where
       -1.0 represents double gravity and 1.0 represents full anti-gravity.
     type: integer
     value: 27
+    value-type: float
+    range: [-1, 1]
   VEHICLE_FLAG_BLOCK_INTERFERENCE:
     member-of: [VehicleFlag]
     tooltip: Vehicle flag that prevents attachments worn by passengers from pushing
@@ -7626,18 +7643,22 @@ constants:
       where 0.0 is bouncy and 1.0 is critically damped.
     type: integer
     value: 25
+    value-type: float
+    range: [0, 1]
   VEHICLE_HOVER_HEIGHT:
     member-of: [VehicleFloatParam]
     tooltip: Vehicle float parameter specifying the height at which the vehicle
       attempts to hover. Set to 0.0 to disable hover.
     type: integer
     value: 24
+    value-type: float
   VEHICLE_HOVER_TIMESCALE:
     member-of: [VehicleFloatParam]
     tooltip: Vehicle float parameter specifying the timescale (period of time in
       seconds) for the vehicle to achieve its hover height.
     type: integer
     value: 26
+    value-type: float
   VEHICLE_LINEAR_DEFLECTION_EFFICIENCY:
     member-of: [VehicleFloatParam]
     tooltip: Vehicle float parameter (range 0.0 to 1.0) modulating the efficiency
@@ -7645,6 +7666,8 @@ constants:
       modulating the strength of linear deflection.
     type: integer
     value: 28
+    value-type: float
+    range: [0, 1]
   VEHICLE_LINEAR_DEFLECTION_TIMESCALE:
     member-of: [VehicleFloatParam]
     tooltip: Vehicle float parameter specifying the exponential timescale for the
@@ -7653,6 +7676,7 @@ constants:
       velocity to be redirected to its preferred axis of motion.
     type: integer
     value: 29
+    value-type: float
   VEHICLE_LINEAR_FRICTION_TIMESCALE:
     member-of: [VehicleVectorParam]
     tooltip: Vehicle vector parameter specifying the timescales (range [0.07,
@@ -7660,6 +7684,8 @@ constants:
       along the vehicle's preferred axes (at, left, up).
     type: integer
     value: 16
+    value-type: vector
+    range: ["<0.07,0.07,0.07>", "<inf,inf,inf>"]
   VEHICLE_LINEAR_MOTOR_DECAY_TIMESCALE:
     member-of: [VehicleFloatParam]
     tooltip: Vehicle float parameter specifying the exponential timescale (in
@@ -7667,6 +7693,8 @@ constants:
       toward zero.
     type: integer
     value: 31
+    value-type: float
+    range: [0, 120]
   VEHICLE_LINEAR_MOTOR_DIRECTION:
     member-of: [VehicleVectorParam]
     tooltip: Vehicle vector parameter specifying the direction and magnitude of the
@@ -7674,18 +7702,22 @@ constants:
       attempts to achieve.
     type: integer
     value: 18
+    value-type: vector
+    range: ["<0,0,0>", "<30,30,30>"]
   VEHICLE_LINEAR_MOTOR_OFFSET:
     member-of: [VehicleVectorParam]
     tooltip: Vehicle vector parameter specifying the offset from the vehicle's
       center of mass where the linear motor force is applied.
     type: integer
     value: 20
+    value-type: vector
   VEHICLE_LINEAR_MOTOR_TIMESCALE:
     member-of: [VehicleFloatParam]
     tooltip: Vehicle float parameter specifying the exponential timescale for the
       vehicle to reach its full linear motor velocity.
     type: integer
     value: 30
+    value-type: float
   VEHICLE_REFERENCE_FRAME:
     member-of: [VehicleRotationParam]
     tooltip: Vehicle rotation parameter setting the orientation of the vehicle's
@@ -7693,6 +7725,7 @@ constants:
       frame (x, y, z).
     type: integer
     value: 44
+    value-type: rotation
   VEHICLE_TYPE_AIRPLANE:
     member-of: [VehicleType]
     tooltip: Vehicle type constant for aircraft that use linear deflection for lift,
@@ -7736,6 +7769,8 @@ constants:
       to keep the vehicle upright.
     type: integer
     value: 36
+    value-type: float
+    range: [0, 1]
   VEHICLE_VERTICAL_ATTRACTION_TIMESCALE:
     member-of: [VehicleFloatParam]
     tooltip: Vehicle float parameter specifying the exponential timescale (in
@@ -7743,6 +7778,7 @@ constants:
       the world Z-axis (vertical).
     type: integer
     value: 37
+    value-type: float
   VERTICAL:
     member-of: [CharacterOrientation]
     tooltip: Constant indicating that the collision capsule orientation for a
